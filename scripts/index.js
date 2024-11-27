@@ -9,12 +9,12 @@
 // @todo: Вывести карточки на страницу
 
 const container = document.querySelector('.content');
-const templateCard = container.querySelector('.places__list');
+const cardsContainer = container.querySelector('.places__list');
 
-function addCard() { // для добавления на сайт
+function addCards() { // для добавления на сайт
   initialCards.forEach(({ name, link }) => {
     const card = createCard({name, link}, deleteCard);
-    templateCard.append(card);
+    cardsContainer.append(card);
   });
 }
 
@@ -25,7 +25,8 @@ function createCard({ name, link }, deleteCard) { // для создания к�
 
   cardElement.querySelector('.card__image').src = link;
   cardElement.querySelector('.card__title').textContent = name;
-
+  cardElement.querySelector('.card__image').alt = name;
+  
   buttonDelete.addEventListener("click", () => deleteCard(cardElement));
 
   return cardElement;
@@ -35,4 +36,9 @@ function deleteCard(cardElement){ // для удаления карточки
   cardElement.remove();
 }
 
-addCard();
+addCards();
+
+
+
+
+
