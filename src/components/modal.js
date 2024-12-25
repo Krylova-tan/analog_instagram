@@ -8,13 +8,13 @@ function openPopup (popupElement) {
 // закрытие попапа
 function closePopup (activePopup) {
   activePopup.classList.remove('popup_is-opened');
-  activePopup.removeEventListener('click', closeByOverlay); // удаление при закрытии
+  activePopup.removeEventListener('click', closeByOverlay);
   document.removeEventListener('keydown', closeByEsc);
-  activePopup.classList.add('popup_is-animated'); // плавность
+  activePopup.classList.add('popup_is-animated');
 }
 
 // закрытие по оверлею
-function closeByOverlay(evt){
+function closeByOverlay(evt) {
   const popup = evt.currentTarget;
   if (evt.target === popup){
     closePopup(popup);
@@ -22,7 +22,7 @@ function closeByOverlay(evt){
 };
 
 // закрытие по esc
-function closeByEsc(evt){
+function closeByEsc(evt) {
   if (evt.key === 'Escape') {
     const popup = document.querySelector('.popup_is-opened')
     closePopup(popup);
