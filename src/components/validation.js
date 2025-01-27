@@ -51,9 +51,11 @@ function clearValidation(formElement, validationSetting){
 
   inputList.forEach((inputElement) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-    hideInputError(errorElement, inputElement, validationSetting);
-  });
-  toggleButtonState(formElement, validationSetting);
+    hideInputError(inputElement, errorElement, validationSetting);
+  });  
+    const buttonSubmit = formElement.querySelector(validationSetting.submitButtonSelector);
+    buttonSubmit.classList.add(validationSetting.inactiveButtonClass);
+    buttonSubmit.disabled = true;
 };
 
 // переключение кнопки

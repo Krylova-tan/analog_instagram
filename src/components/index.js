@@ -175,7 +175,13 @@ function openPopupImage(evt) {
 // изменение аватара
 const popupUpdateAvatar = document.querySelector('.popup_type_avatar');
 const formUpdateAvatar = popupUpdateAvatar.querySelector('.popup__form');
-const profileAvatarImg = document.querySelector('.profile__image');
+const avatarProfile = document.querySelector('.profile__image');
+
+// обновления аватара
+avatarProfile.addEventListener('click', () => {
+  openPopup(popupUpdateAvatar);
+  clearValidation(formUpdateAvatar, validationSetting);
+});
 
 formUpdateAvatar.addEventListener('submit', (evt) => {
   evt.preventDefault();
@@ -190,8 +196,8 @@ formUpdateAvatar.addEventListener('submit', (evt) => {
 
       updateAvatarUser(urlAvatar)
         .then((data) => {
-          document.querySelector('.profile__image').src = data.avatar;
-
+          avatarProfile.style.backgroundImage = `url(${data.avatar})`;
+          
           closePopup(popupUpdateAvatar);
           formUpdateAvatar.reset();
         })
@@ -208,11 +214,7 @@ formUpdateAvatar.addEventListener('submit', (evt) => {
     }
 });
 
-// открытие обновления аватара
-profileAvatarImg.addEventListener('click', () => {
-  openPopup(popupUpdateAvatar);
-  clearValidation(formUpdateAvatar, validationSetting);
-});
+
 
 
 
