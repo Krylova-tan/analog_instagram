@@ -29,7 +29,7 @@
 ## Посмотреть проект можно здесь:
 
 ```
-https://Krylova-tan.github.io/mesto-project-ff/
+https://Krylova-tan.github.io/analog_instagram
 ```
 
 ## 🚀 Запуск проекта локально
@@ -37,8 +37,7 @@ https://Krylova-tan.github.io/mesto-project-ff/
 Клонируйте репозиторий
 
 ```
-git clone https://github.com/ваш-username/mesto-project-ff.git
-cd mesto-project-ff
+git clone https://github.com/ваш-username/analog_instagram.git
 ```
 
 Установите зависимости
